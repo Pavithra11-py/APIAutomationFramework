@@ -1,4 +1,4 @@
-package org.apipractice.Paload_management.gson;
+package org.apipractice.pojos;
 
 
 import com.google.gson.annotations.Expose;
