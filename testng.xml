@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/APIAutomationFramework/src/test/java/org/apipractice/tests/sample/Testintegrationsample.java">
+        <classes><class name="org.apipractice.tests.sample.Testintegrationsample">
+            <methods><include name="testCreateBooking"/>
+                <include name="testVerifyBookingId"/>
+                <include name="testUpdateBookingByID"/>
+                <include name="testDeleteBookingById"/>
+            </methods></class>
+        </classes>
+    </test>
+</suite>
