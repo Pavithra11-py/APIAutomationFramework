@@ -37,7 +37,7 @@ public class TestCreateBooking extends BaseTest{
         validatableResponse.statusCode(200);
         BookingResponse bookingResponse = PayloadManager.bookingresponsejava(response.asString());
          // validation
-        assertActions.verifyStringKey(bookingResponse.getBooking().getFirstname(),"Jim");
+        assertActions.verifyStringKey(bookingResponse.getBooking().getFirstname(),"Praveen");
         assertActions.verifyStringKeyNotNull(bookingResponse.getBookingid());
 
     }

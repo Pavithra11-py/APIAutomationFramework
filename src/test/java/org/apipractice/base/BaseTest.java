@@ -22,8 +22,8 @@ public class BaseTest {
     public ValidatableResponse validatableResponse;
 
     @BeforeTest
-    public void setup(){
-        payloadManager  = new PayloadManager();
+    public void setup() {
+        payloadManager = new PayloadManager();
         assertActions = new AssertActions();
 
 //        requestSpecification = RestAssured.given().baseUri(APIconstants.Base_URL)
@@ -35,7 +35,23 @@ public class BaseTest {
                 .build().log().all();
 
 
-
     }
 
+    public String getToken() {
+        requestSpecification = RestAssured
+                .given()
+                .baseUri(APIconstants.Base_URL)
+                .basePath(APIconstants.AUTH_URL);
+
+        // Setting the payload
+        String payload = payloadManager.Auth_payload();
+
+        // Get the Token
+        response = requestSpecification.contentType(ContentType.JSON).body(payload).when().post();
+        // String Extraction
+        String token = payloadManager.getTokenJson(response.asString());
+
+        return token;
+
+    }
 }
